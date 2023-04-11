@@ -1,0 +1,230 @@
+/*
+Making it Work
+Main.java will launch the application and show Main.fxml.
+MainController.java will be the EventHandler for this fxml.
+MainController will start an AvengerTask on another thread in your app.
+The Model
+The model of this application will be the same as a previous lab, using Person.java 
+and Avenger.java. This lab will additionally include AvengerTask.java in the model, 
+in order to manage threading in your app.
+
+A Person has a name, a recent photo, a height, and a weight. 
+
+An Avenger has an alias, a color code, and a current latitude & longitude. 
+The color code defines the color of their dot on the map.
+The latitude and longitude are positive integer values corresponding to the x 
+and y coordinates on the map image. A negative value for either of these coordinates 
+may indicate that the avenger is “off planet”.
+
+Note that the Avengers listed will not change - the labels at the bottom of the view 
+can be hard-coded if necessary, as we will not add or remove any from the app. The 
+color codes have not been incorporated into the data, and can be hard-coded. However 
+data.csv contains all other information - formatted as previously, where “location” 
+has been updated to latitude and longitude values. Each Avenger is assigned an initial value 
+- this value and map location does not need to match the example views shown.
+
+Threads
+AvengerTask.java will be responsible for handling the app updates every 10 seconds. 
+At this interval:
+The date/timestamp at the bottom of the app should be updated. 
+Each Avenger has a 10% chance of changing location.
+For each Avenger, randomly decide if their location will change.
+If the location should change, randomly choose new latitude and longitude values
+Update the Avengers’ latitude and longitude
+Update the Avengers’ icon on the map.
+
+While it might be possible to implement this app without the use of threads, it does not make for 
+a good user experience. To get started, create the basic functionality of the full app - add the new 
+view, controller, and model class. Once that is complete, start to consider threads and tasks in JavaFX.
+
+LOAD AVENGER:
+
+Avenger avenger = new Avenger(name, alias, gender, height, weight, offPlanet, latitude, longitude); // passing values of name,alias,gender,height,weight,specialAbilities and current location to create an object of Avenger class.  
+			            loadAvenger(avenger);// adding avenger to the list
+
+ public void loadAvenger(String filename){
+		/**
+		 * use setList method to pull members from array list
+		 */
+    	setList(this.name);
+		try{  
+		    //input file var
+		    File file = new File (filename);
+		    /*
+		     * prompt for input
+		     */
+		    System.out.println("Enter filename: \n");
+			Scanner inputFile = new Scanner (file);
+			
+		    while (inputFile.hasNextLine()) {
+		    	//System.out.print("--\n");//test scanner***********
+		    	
+		    	//		tokens		0				1		    2  3 4	5  6  7  8
+		    	//String test = "Steve Rogers,Captain America,male,6,2,240,F,140,98";
+		    	String [] tokens = inputFile.nextLine().split(",");
+		    	
+		    	//(tokens);
+		    	if(tokens != null && tokens.length == 8) {
+		    		/**
+		    		 * assign variables to csv input
+		    		 */
+		    		name = tokens[0];
+		    		alias = tokens[1];
+		    		gender = tokens[2];
+		    		height = Integer.parseInt(tokens[3]) + "'" + Integer.parseInt(tokens[4]) + "\"";
+		    		weight = Double.parseDouble(tokens[5]);
+		    		offPlanet = false;//initialize default value
+		    		if (tokens[6] == "F"){
+		    			 offPlanet = false;
+		    		}
+		    		else{
+		    			offPlanet = true;
+		    		}
+		    		latitude = Integer.parseInt(tokens[7]);
+		    		longitude = Integer.parseInt(tokens[8]);
+		    	}
+		    }
+		    inputFile.close();
+		 }catch(IOException e) {  //handling the exception 
+        System.out.println(e);
+        System.out.print("******Check for error in File IO******\n");
+		 }
+	}
+
+
+
+
+
+
+ /*
+     * // Creating the panel...
+    JLabel lblThetime = new JLabel(date);
+    Timer timer = new Timer();
+    timer.scheduleAtFixedRate(new TimerTask() {
+        @Override
+        public void run() {
+           String date = new java.text.SimpleDateFormat("HH:mm:ss").format(new java.util.Date() );
+
+           lblThetime.setText(date);
+        }
+    }, 1000, 1000);
+
+	
+
+    final Duration countdownDuration = Duration.seconds(5);
+    
+    Thread timer = new Thread(() -> {
+        LocalTime start = LocalTime.now();
+        LocalTime current = LocalTime.now();
+        LocalTime end = start.plus(countdownDuration);
+
+        while (end.isAfter(current)) {
+            current = LocalTime.now();
+            final Duration elapsed = Duration.between(current, end);
+
+            Platform.runLater(() -> timeLeft.set(current)); // As the label is bound to timeLeft, this line must be inside Platform.runLater()
+            Thread.sleep(1000);
+        }
+    });
+    
+   
+    public class TimerController {
+        private final Timeline timer;
+
+        private final ObjectProperty<java.time.Duration> timeLeft;
+
+        @FXML 
+        private Label timeLabel;
+
+        public TimerController() {
+            timer = new Timeline();
+            timer.getKeyFrames().add(new KeyFrame(Duration.seconds(1), ae -> updateTimer()));
+            timer.setCycleCount(Timeline.INDEFINITE);
+
+            timeLeft = new SimpleObjectProperty<>();
+        }
+        public void initialize() {
+            timeLabel.textProperty().bind(Bindings.createStringBinding(() -> getTimeStringFromDuration(timeLeft.get()), timeLeft));
+        }
+
+        @FXML
+        private void startTimer(ActionEvent ae) {
+            timeLeft.set(Duration.minutes(5)); // For example timer of 5 minutes
+            timer.playFromStart();
+        }
+
+        private void updateTimer() {
+            timeLeft.set(timeLeft.get().minusSeconds(1));
+        }
+
+        private String getTimeStringFromDuration(java.time.Duration duration) {
+			return null;
+            // Do the conversion here...
+        }
+    }
+   */
+   
+   public class AvengerTask extends MainController implements Runnable{
+	/*
+ThreadHelper threadHelper = new ThreadHelper(holder, puzzleSurface);
+Thread thread = new Thread(threadHelper);
+thread.start();
+	 */
+	double lng, lat;
+	AvengerDot marker = new AvengerDot();
+	AvengerTask runnable = new AvengerTask();
+	Thread thread = new Thread(runnable);
+	//thread.start();
+    
+	  
+    @Override    
+    public void run(){
+
+			for (int i = 1; i <= 5; i++ ) {
+				
+				//System.out.println(i);//****TEST IF WORKING
+				lng = (Math.random() * 360.0) - 180.0;
+                lat = (Math.random() * 180.0) - 90.0;
+                marker.setPosition(lat, lng);
+              
+				//System.out.printf("%f ,%f\n",lat, lng);//*****TEST IF RANDOM POSITIONS CHANGE
+		
+				try {
+					Thread.sleep(10000);
+				}catch (InterruptedException e) {
+				}
+			}
+			thread.start();
+    }
+    public void run2() {
+	    String date = null;
+		JLabel lblThetime = new JLabel(date);
+	    Timer timer = new Timer();
+	    
+	    timer.scheduleAtFixedRate(new TimerTask() {
+	        @Override
+	        public void run() {
+	           String date = new java.text.SimpleDateFormat("HH:mm:ss").format(new java.util.Date() );
+	
+	           lblThetime.setText(date);
+	        }
+	    }, 1000, 1000);
+	    //System.out.println(date);//*****TEST DATE OUTPUT
+	    thread.start();
+    }
+
+	public class AvengerDot {
+
+		public void setPosition(double lat, double lng) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+    }
+
+
+
+}
+   
+
+*/

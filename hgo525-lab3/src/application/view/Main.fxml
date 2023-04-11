@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <Pane maxHeight="600.0" maxWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="337.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/shield.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonSHIELD" layoutX="337.0" layoutY="14.0" mnemonicParsing="false" onAction="#handle" opacity="0.0" prefHeight="100.0" prefWidth="100.0" />
+            <Label fx:id="labelSHIELD" alignment="CENTER" contentDisplay="CENTER" layoutX="87.0" layoutY="114.0" prefWidth="600.0" text="S.H.I.E.L.D." textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font></Label>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="37.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/BP.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonBP" layoutX="37.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleBP" opacity="0.0" prefHeight="100.0" prefWidth="100.0" />
+            <Label fx:id="labelBP" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="300.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="437.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/BW.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonBW" layoutX="437.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleBW" opacity="0.0" prefHeight="100.0" prefWidth="100.0" />
+            <Label fx:id="labelBW" alignment="CENTER" contentDisplay="CENTER" layoutX="412.0" layoutY="300.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="237.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/thor.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonThor" layoutX="237.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleThor" opacity="0.0" prefHeight="100.0" prefWidth="100.0" />
+            <Label fx:id="labelThor" alignment="CENTER" contentDisplay="CENTER" layoutX="212.0" layoutY="300.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="137.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/IM.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonIM" layoutX="137.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleIM" opacity="0.0" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" />
+            <Label fx:id="labelIM" alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="503.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="337.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/cap.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonCap" layoutX="337.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleCap" opacity="0.0" prefHeight="100.0" prefWidth="100.0" />
+            <Label fx:id="labelCap" alignment="CENTER" contentDisplay="CENTER" layoutX="312.0" layoutY="503.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="537.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/hawkeye.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonHawkEye" layoutX="537.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleHawkEye" opacity="0.0" prefHeight="100.0" prefWidth="100.0" />
+            <Label fx:id="labelHawkEye" alignment="CENTER" contentDisplay="CENTER" layoutX="512.0" layoutY="503.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="637.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/hulk.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonHulk" layoutX="637.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleHulk" opacity="0.0" prefHeight="100.0" prefWidth="100.0" />
+            <Label fx:id="labelHulk" alignment="CENTER" contentDisplay="CENTER" layoutX="612.0" layoutY="300.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

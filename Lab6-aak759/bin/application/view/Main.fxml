@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <ImageView fx:id="mapImage" fitHeight="359.0" fitWidth="800.0" layoutY="183.0">
+         <image>
+            <Image url="@../../../../../Downloads/earth.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="logoImage" fitHeight="92.0" fitWidth="116.0" layoutX="142.0" layoutY="60.0">
+         <image>
+            <Image url="@../../../../../Downloads/logo.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="shadedPane" blendMode="DARKEN" prefHeight="61.0" prefWidth="717.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <SepiaTone />
+         </effect>
+      </Pane>
+      <Circle fill="DODGERBLUE" layoutX="19.0" layoutY="666.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#1fff6a" layoutX="19.0" layoutY="560.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff321f" layoutX="19.0" layoutY="587.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#aeb0b2" layoutX="19.0" layoutY="613.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#0d0d0d" layoutX="19.0" layoutY="640.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#902ba4" layoutX="19.0" layoutY="692.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ffbd1f" layoutX="19.0" layoutY="716.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#e5ff1f" layoutX="19.0" layoutY="744.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="textBox" layoutX="289.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S.H.I.E.L.D.">
+         <font>
+            <Font name="Geneva" size="60.0" />
+         </font>
+      </Text>
+      <Text fx:id="hulk" layoutX="31.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="ironman" layoutX="32.0" layoutY="591.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iron Man" wrappingWidth="74.90185546875">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="thor" layoutX="31.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thor">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="blackWidow" layoutX="31.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Black Widow">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="captainAmerica" layoutX="32.0" layoutY="671.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Captain America">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="blackPanther" layoutX="31.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Black Panther">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="hawkeye" layoutX="31.0" layoutY="721.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hawkeye">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="hulk" layoutX="31.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hulk">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="doctorStrange" layoutX="31.0" layoutY="749.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doctor Strange">
+         <font>
+            <Font name="Times New Roman" size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="Date" layoutX="223.0" layoutY="781.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last updated: " wrappingWidth="271.21630859375">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>

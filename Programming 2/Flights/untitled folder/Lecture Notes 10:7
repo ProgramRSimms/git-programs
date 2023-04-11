@@ -1,0 +1,5 @@
+//USAGE
+//exeName inputFileName outputFileName
+./a.out input-student.txt output-student.txt
+
+inFile = fopen(argv[1], "r")

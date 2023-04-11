@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <Pane layoutX="3.0" prefHeight="800" prefWidth="500">
+         <children>
+            <Button layoutX="133.0" layoutY="373.0" mnemonicParsing="false" onAction="#handle" text="Select a directory containing your books" />
+            <Label layoutX="214.0" layoutY="225.0" text="Welcome!" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,114 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <string.h>
+
+#define SIZE 100
+
+int main(int argc, char *argv[]){
+   //vars.
+   char userInput[SIZE];
+   char *words = userInput;
+   char word1[SIZE / 2], word2[SIZE / 2];
+   int found = 0, i = 0, j = 0;
+   
+   // Allocate the memory.
+   words = (char*)malloc(sizeof(*words) * SIZE);
+   
+   //buffer for getline
+   size_t bufsize = SIZE;
+   // Prompt/get input
+   printf("Enter input string:\n");//**OUTPUT**
+   fgets(userInput, SIZE, stdin);
+   //printf("%s\n", words);//****TEST IF GETTING INPUT****
+   
+   //FIRST CHECK IF QUIT PASSED BY USER
+   //loop for 'q'
+   while (userInput != NULL){
+      // Check for 'q' 
+      if (userInput[0] == 'q'){
+         exit(0);// Exit the program.
+      }
+   }
+      //NEXT LOOK FOR A COMMA AND SPACE FOR VALID INPUT STYLE
+      // loop to find comma
+      for (i = 0; i < strlen(userInput); i++){
+         if (userInput[i] == ','){// if found break
+            found = 1;
+            found++;
+            break;
+         }
+         // new words
+         if (userInput[i] != ' ' && userInput[i] != ','){//if not comma or space
+            word1[j++] = userInput[i];
+
+         }
+      }
+      // split the string
+      word1[j] = '\0';
+      i++;
+      
+      // Check if found.
+      if (found == 1){
+         while (userInput[i] != '\0'){//delimiter
+            //new string 2
+            if (userInput[i] != ' '){
+               word2[j++] = userInput[i];
+            }
+            i++;
+         }
+         word2[j] = '\0';
+         // output the found words
+         printf("First word: %s\n", word1);//**OUTPUT**
+         printf("\nSecond word: %s\n", word2);//**OUTPUT**
+      }
+
+      //if no comma found
+      else{
+         printf("Error: No comma in string.\n");//**OUTPUT**
+      }
+      // Prompt for valid input
+      printf("Enter input string:\n");//**OUTPUT**
+      getline(&words, bufsize, stdin);
+   return 0;
+}
+/*strtok example: 
+int main() {
+   char string[50] = "Hello world";
+   // Extract the first token
+   char * token = strtok(string, " ");
+   printf( " %s\n", token ); //printing the token
+   return 0;
+   
+   getline example
+   #include <stdio.h>
+
+int input(char *s,int length);
+
+int main(){
+    char buffer[32];
+    char *b = buffer;
+    size_t bufsize = 32;
+    size_t characters;
+
+    printf("Type something: ");
+    characters = getline(&b,&bufsize,stdin);
+    printf("%zu characters were read.\n",characters);
+    printf("You typed: '%s'\n",buffer);
+
+    return(0);
+}
+
+strchr() example
+
+int main(void)
+{
+  char buffer1[SIZE] = "computer program";
+  char * ptr;
+  int    ch = 'p';
+ 
+  ptr = strchr( buffer1, ch );
+  printf( "The first occurrence of %c in '%s' is '%s'\n",
+            ch, buffer1, ptr );
+   
+   */
+   

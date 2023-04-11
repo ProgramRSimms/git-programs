@@ -1,0 +1,10 @@
+//makefile
+
+routeProg : main.o routeRecords.o
+        gcc -c main.o routeRecords.o -o routeProg
+main.o : main.c routeRecords.h
+        gcc -c main.c
+routeRecords.o : routeRecords.c routeRecords.h
+        gcc -c routeRecords.c
+clean:
+        rm *.o routeProg

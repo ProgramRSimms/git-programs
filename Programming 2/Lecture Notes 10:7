@@ -1,0 +1,69 @@
+//Header File
+#ifndef STUDENT_H
+#include STUDENT_H
+
+
+
+
+
+//C File
+#include <stdio.h>
+#include <stdlib.h>
+#inlcude "student.h"
+
+int main (int argc, char *argv[]){
+    //char inputFName[] = "input.student.txt";
+    FILE* inFile;//open file and create a file pointer
+    inFile = fopen("input.student.txt","r");//r = read mode
+    if (inFile == NULL){
+        printf("ERROR: Could not open input file!\n");
+        return 1;
+    }
+    int n = 0;
+    Student* s;
+   
+    char buffer[100];
+    while (!feof(inFile)){
+        fgets (buffer, 100, inFile);//will not read more than 100 chars
+        n++;
+    }//NOTE: increments file pointer using fgets line by line function
+    //to read the file again after reaching the end
+    rewind(inFile);
+    s = (Student*)malloc(sizeof(Student) * n);
+    int i = 0;
+    while (!feof(inFile) && i < n){//error check 0 - n-1
+        fgets (buffer, 100, inFile);
+        //buffer = "John 1 2.0"
+        sscanf("%s %d %lf", s[i].name, &(s[i].id), &(s[i].gpa));
+        i++;    
+    }
+    fclose(inFile);
+    int idx = -1;
+    //find student with highest gpa
+    int i = 0
+    double gpa = 0;
+    for (i =0; i < n; i++){
+        if s[i].gpa >= gpa){
+            gpa = s[i].gpa;
+            idx = i;
+        }
+    }
+    if (idx == -1){
+        printf("No best student found!\n");
+        return 1;
+    }
+    FILE* outFile;
+    outFile = fopen("output- student.txt", "w");
+    if (outFile == NULL){
+        printf("ERROR: Could not open output file!\n");
+        return 1;
+    }
+    
+    }
+    fprintf(outFile, "%s %d %lf, s[idx].name, s[idx].id, s[idx].gpa]);
+    fclose(outFile);
+    free(s);
+    return 0;//data stored into struct
+
+
+}

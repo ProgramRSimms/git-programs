@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="604.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <ImageView fx:id="png" fitHeight="604.0" fitWidth="735.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../AppView1.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="captainAmerica" layoutX="51.0" layoutY="215.0" mnemonicParsing="false" onAction="#handle" opacity="0.0" prefHeight="174.0" prefWidth="148.0" text="Button" />
+      <Button fx:id="ironMan" layoutX="220.0" layoutY="215.0" mnemonicParsing="false" onAction="#handle" opacity="0.0" prefHeight="174.0" prefWidth="148.0" text="Button" />
+      <Button fx:id="hulk" layoutX="387.0" layoutY="215.0" mnemonicParsing="false" onAction="#handle" opacity="0.0" prefHeight="174.0" prefWidth="148.0" text="Button" />
+      <Button fx:id="blackWidow" layoutX="552.0" layoutY="215.0" mnemonicParsing="false" onAction="#handle" opacity="0.0" prefHeight="174.0" prefWidth="148.0" text="Button" />
+      <Label fx:id="caLabel" alignment="TOP_CENTER" layoutX="51.0" layoutY="335.0" prefHeight="54.0" prefWidth="148.0" />
+      <Label fx:id="ironmanLabel" alignment="TOP_CENTER" layoutX="220.0" layoutY="335.0" prefHeight="54.0" prefWidth="148.0" />
+      <Label fx:id="hulkLabel" alignment="TOP_CENTER" layoutX="387.0" layoutY="335.0" prefHeight="54.0" prefWidth="148.0" />
+      <Label fx:id="bwLabel" alignment="TOP_CENTER" layoutX="552.0" layoutY="335.0" prefHeight="54.0" prefWidth="148.0" />
+   </children>
+</AnchorPane>

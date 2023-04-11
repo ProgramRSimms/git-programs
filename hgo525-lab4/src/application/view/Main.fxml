@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="292.0" prefWidth="798.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <ImageView fitWidth="600.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/db_bar.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="412.0" prefWidth="798.0" spacing="40.0" style="-fx-background-color: FFFFFF;">
+               <children>
+                  <Button fx:id="classifiedsButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handle" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #000000;" text="CLASSIFIEDS" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Courier New Bold" size="48.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="crosswordButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleCrossword" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #000000;" text="CROSSWORD PUZZLE" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Courier New Bold" size="36.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
