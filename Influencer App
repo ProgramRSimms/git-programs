@@ -1,0 +1,33 @@
+//swift ui
+*/
+1.	Model:
+	•	Create models for past, current, and future events, as well as for photos.
+	•	Include properties like event name, date, description, and images.
+
+2.	Data Source:
+	•	Use a data source (e.g., JSON, Firebase) to store information about events and photos.
+
+3.	User Interface:
+	•	Build views for past, current, and future events, displaying details using the models.
+	•	Create a separate section for photos and family images.
+	•	Implement a subscriber section with user authentication.
+
+4.	Navigation:
+	•	Use navigation controllers to navigate between different sections of the app.
+
+5.	Subscriber Feature:
+	•	Implement a user registration and login system.
+	•	Create a section to manage subscribers, possibly with push notifications for updates.
+
+6.	Integration of Photos:
+	•	Utilize image views and galleries to showcase photos and family images.
+
+7.	API Integration:
+	•	If needed, integrate with social media APIs to fetch the latest posts and updates from influencers.
+
+8.	Testing:
+	•	Test the app thoroughly on different devices and iOS versions.
+
+Remember to follow Apple’s design guidelines, and consider user experience throughout the development process. 
+For a fully functional app, consult Swift documentation and get familiar with the language for iOS development.
+/*
